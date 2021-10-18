@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spawnBox : MonoBehaviour
+public class Spawn : MonoBehaviour
 {
     public GameObject Kotak;
 
@@ -10,7 +10,7 @@ public class spawnBox : MonoBehaviour
 
     private void Start()
     {
-        randomTotal = Random.Range(5, 20);
+        randomTotal = Random.Range(5,20);
         for (int i = 0; i < randomTotal; i++)
         {
             randomVertical = Random.Range(4f, -4f);
