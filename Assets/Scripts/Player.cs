@@ -1,14 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     //foodnya
     public GameObject Kotak;
-
-    //Enemy
-    public GameObject Enemy;
 
     //peluru
     public GameObject bullet;
@@ -27,8 +25,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    //Gerakan bola
-    void Update()
+    void FixedUpdate()
     {
         //input mouse
         transform.position = Vector2.MoveTowards(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), speed * Time.deltaTime);
@@ -56,7 +53,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Box")
+        if (collision.gameObject.tag == "Food")
         {
             //makanan hancur
             Destroy(collision.gameObject);
@@ -76,7 +73,7 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
 
             //gameover
-
+            SceneManager.LoadScene("LoseMenu");
         }
     }
 
