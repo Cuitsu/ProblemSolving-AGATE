@@ -46,11 +46,16 @@ public void Problem8()
 
     public void Problem9 ()
     {
+        SceneManager.LoadScene("MainGame");
+    }
+
+    public void MainMenu()
+    {
         SceneManager.LoadScene("MainMenu");
     }
 
     public void Back()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MakeGame");
     }
 }
