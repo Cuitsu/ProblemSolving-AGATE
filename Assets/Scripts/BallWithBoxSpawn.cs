@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class BallWithBoxSpawn : MonoBehaviour
 {
+    public GameObject Kotak;
+
+    float randomVertical, randomHorizontal, randomTotal;
+
     //Rigidbody 2d bola
     private Rigidbody2D rb;
 
@@ -14,6 +18,14 @@ public class BallWithBoxSpawn : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        randomTotal = Random.Range(5, 20);
+        for (int i = 0; i < randomTotal; i++)
+        {
+            randomVertical = Random.Range(4f, -4f);
+            randomHorizontal = Random.Range(8f, -8f);
+            Instantiate(Kotak, new Vector2(randomHorizontal, randomVertical), Quaternion.identity);
+        }
     }
 
     //Gerakan bola
