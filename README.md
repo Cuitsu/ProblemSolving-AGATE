@@ -1,3 +1,4 @@
 # ProblemSolving-AGATE
  
-Problem 8 : kotak dapat menambah score dan akan spawn kembali setelah 3 detik
+Full game dari 9 problem solving
+build dapat dilihat di realease
